@@ -32,6 +32,6 @@ public class EjercicioTaxis : MonoBehaviour
         if (combustible >= descuentoThreshold) coste *= (1 - descuento);
         Debug.Log($"Una flota de {taxis} unidades trabajando durante {dias} días implicará un gasto de ${costeNoDescuento} pesos en concepto de combustible");
         if (coste == costeNoDescuento) return;
-        Debug.Log($"Debido a que se consumirían {combustible} litros de combustible, el convenio nos garantiza un descuento del {descuento * 100}%, haciendo que el coste total sean ${coste} pesos");
+        Debug.Log($"Debido a que se consumirían {combustible} litros de combustible, el convenio nos garantiza un descuento de ${costeNoDescuento * descuento} pesos, haciendo que el coste total sean ${coste} pesos");
     }
 }
