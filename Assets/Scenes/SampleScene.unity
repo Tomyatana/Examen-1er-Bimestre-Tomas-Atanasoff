@@ -143,10 +143,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   taxis: 1
   dias: 5
-  distTaxi: 90
-  costeCombustible: 130
-  distCombustible: 15
-  descuento: 0.2
 --- !u!4 &286069054
 Transform:
   m_ObjectHideFlags: 0

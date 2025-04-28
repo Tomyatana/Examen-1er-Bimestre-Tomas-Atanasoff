@@ -6,25 +6,27 @@ public class EjercicioTaxis : MonoBehaviour
 {
     public uint taxis = 1;
     public uint dias = 5;
-    public uint distTaxi = 85;
-    public float costeCombustible = 130;
-    public uint distCombustible = 15;
-    public float descuento = 0.20f;
+    uint distTaxi = 90;
+    float costeCombustible = 130;
+    uint distCombustible = 15;
+    float descuento = 0.20f;
     uint descuentoThreshold = 100;
+    uint minDias = 5;
+    uint minTaxis = 1;
     // Start is called before the first frame update
     void Start()
     {
-        if(dias < 5)
+        if(dias < minDias)
         {
-            print("La cantidad de días no puede ser menor a 5");
+            print($"La cantidad de días no puede ser menor a {minDias}");
             return;
         }
-        if(taxis < 1)
+        if(taxis < minTaxis)
         {
-            print("La cantidad de taxis no puede ser menor a 1");
+            print($"La cantidad de taxis no puede ser menor a {minTaxis}");
             return;
         }
-        float combustible = ((float)distTaxi / (float)distCombustible);
+        float combustible = ((float)distTaxi / (float)distCombustible) * dias * taxis;
         float coste = combustible * costeCombustible;
         float costeNoDescuento = coste;
         if (combustible >= descuentoThreshold) coste *= (1 - descuento);
